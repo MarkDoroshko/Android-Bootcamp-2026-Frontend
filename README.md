@@ -199,3 +199,6 @@
 Задачи frontend:
 * Обработка нажатия кнопки “Выход”.
 * При нажатии: удаление сохраненного в local storage токена; перенаправление пользователя на экран авторизации.
+
+
+Ссылка на Figma-макет: https://www.figma.com/design/Fd0MpU4NaRjj1MTQvf8d2q/Untitled?node-id=0-1&t=G7WQPuzsefRCKHBx-1
