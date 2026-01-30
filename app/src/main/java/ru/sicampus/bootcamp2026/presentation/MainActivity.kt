@@ -19,7 +19,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AndroidBootcamp2026FrontendTheme {
+            AndroidBootcamp2026FrontendTheme(
+                darkTheme = false
+            ) {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     RegistrationScreen(
                         modifier = Modifier.padding(innerPadding),
