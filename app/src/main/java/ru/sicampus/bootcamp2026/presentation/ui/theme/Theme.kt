@@ -3,12 +3,20 @@ package ru.sicampus.bootcamp2026.presentation.ui.theme
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
+import ru.sicampus.bootcamp2026.R
 
 private val DarkColorScheme = darkColorScheme(
 )
@@ -35,6 +43,31 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+private val robotoFontFamily = FontFamily(
+    Font(R.font.roboto_regular, FontWeight.Normal),
+    Font(R.font.roboto_medium, FontWeight.Medium),
+    Font(R.font.roboto_bold, FontWeight.Bold)
+)
+
+private val introFontFamily = FontFamily(
+    Font(R.font.intro_bold, FontWeight.Bold)
+)
+
+val AppTypography = Typography().copy(
+    titleLarge = TextStyle(
+        fontFamily = introFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        letterSpacing = 0.sp
+    ),
+    labelMedium = TextStyle(
+        fontFamily = robotoFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        textAlign = TextAlign.Center
+    )
+)
+
 @Composable
 fun AndroidBootcamp2026FrontendTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -54,7 +87,7 @@ fun AndroidBootcamp2026FrontendTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = AppTypography,
         content = content
     )
 }

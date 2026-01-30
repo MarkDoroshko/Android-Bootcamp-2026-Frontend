@@ -22,7 +22,7 @@ import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026Fronten
 @Composable
 fun Field(
     modifier: Modifier = Modifier,
-    labelText: String
+    labelText: String,
 ) {
     var text by remember { mutableStateOf("") }
 

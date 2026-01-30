@@ -18,7 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.sicampus.bootcamp2026.R
-import ru.sicampus.bootcamp2026.presentation.components.Button
+import ru.sicampus.bootcamp2026.presentation.components.AppButton
+import ru.sicampus.bootcamp2026.presentation.components.ButtonContent
 import ru.sicampus.bootcamp2026.presentation.components.Field
 import ru.sicampus.bootcamp2026.presentation.components.Title
 import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026FrontendTheme
@@ -67,8 +68,8 @@ fun RegistrationScreen(
             Field(
                 labelText = stringResource(R.string.password_placeholder)
             )
-            Button(
-                textOnButton = stringResource(R.string.sign_up_button),
+            AppButton(
+                content = ButtonContent.Text(R.string.sign_up_button),
                 onClick = {}
             )
             Text(
