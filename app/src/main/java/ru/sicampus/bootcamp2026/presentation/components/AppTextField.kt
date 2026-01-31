@@ -20,11 +20,12 @@ import androidx.compose.ui.unit.dp
 import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026FrontendTheme
 
 @Composable
-fun Field(
+fun AppTextField(
     modifier: Modifier = Modifier,
     labelText: String,
+    value: String = ""
 ) {
-    var text by remember { mutableStateOf("") }
+    var text by remember { mutableStateOf(value) }
 
     TextField(
         modifier = modifier
@@ -49,9 +50,9 @@ fun Field(
 
 @Preview
 @Composable
-fun PreviewTextField() {
+fun PreviewTextAppTextField() {
     AndroidBootcamp2026FrontendTheme {
-        Field(
+        AppTextField(
             labelText = "имя"
         )
     }

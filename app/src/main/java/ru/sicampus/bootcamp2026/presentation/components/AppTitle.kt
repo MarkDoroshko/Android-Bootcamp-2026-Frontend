@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026FrontendTheme
 
 @Composable
-fun Title(
+fun AppTitle(
     modifier: Modifier = Modifier,
     titleText: String
 ) {
@@ -31,9 +31,9 @@ fun Title(
 
 @Preview
 @Composable
-fun PreviewTitle() {
+fun PreviewAppTitle() {
     AndroidBootcamp2026FrontendTheme {
-        Title(
+        AppTitle(
             titleText = "Регистрация"
         )
     }

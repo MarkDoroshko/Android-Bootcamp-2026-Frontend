@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.sp
 import ru.sicampus.bootcamp2026.R
 import ru.sicampus.bootcamp2026.presentation.components.AppButton
 import ru.sicampus.bootcamp2026.presentation.components.ButtonContent
-import ru.sicampus.bootcamp2026.presentation.components.Field
-import ru.sicampus.bootcamp2026.presentation.components.Title
+import ru.sicampus.bootcamp2026.presentation.components.AppTextField
+import ru.sicampus.bootcamp2026.presentation.components.AppTitle
 import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026FrontendTheme
 
 @Composable
@@ -38,7 +38,7 @@ fun AuthorizationScreen(
             .padding(horizontal = 50.dp),
         verticalArrangement = Arrangement.Center
     ) {
-        Title(
+        AppTitle(
             modifier = Modifier,
             titleText = stringResource(R.string.sign_in_title)
         )
@@ -50,10 +50,10 @@ fun AuthorizationScreen(
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Field(
+            AppTextField(
                 labelText = stringResource(R.string.email_placeholder)
             )
-            Field(
+            AppTextField(
                 labelText = stringResource(R.string.password_placeholder)
             )
             AppButton(

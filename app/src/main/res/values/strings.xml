@@ -14,4 +14,5 @@
     <string name="back">Back</string>
     <string name="sign_out">Выйти</string>
     <string name="profile_title">Профиль</string>
+    <string name="save_button">Сохранить</string>
 </resources>
