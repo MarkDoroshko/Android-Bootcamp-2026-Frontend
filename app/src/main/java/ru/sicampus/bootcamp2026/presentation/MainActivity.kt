@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import ru.sicampus.bootcamp2026.presentation.screen.creating_meeting.CreatingMeetingScreen
 import ru.sicampus.bootcamp2026.presentation.screen.registration.RegistrationScreen
 import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026FrontendTheme
 
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
                 darkTheme = false
             ) {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    RegistrationScreen(
+                    CreatingMeetingScreen { }(
                         modifier = Modifier.padding(innerPadding),
                         onNavigateToAuthorization = {},
                         onFinished = {}

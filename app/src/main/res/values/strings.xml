@@ -15,4 +15,11 @@
     <string name="sign_out">Выйти</string>
     <string name="profile_title">Профиль</string>
     <string name="save_button">Сохранить</string>
+    <string name="creating_invitation_title">Пригласить</string>
+    <string name="email_guest_placeholder">email гостя</string>
+    <string name="invite_button">Пригласить</string>
+    <string name="creating_meeting_title">Создание встречи</string>
+    <string name="create_button">Создать</string>
+    <string name="name_meeting_placeholder">название</string>
+    <string name="description_meeting_placeholder">описание</string>
 </resources>

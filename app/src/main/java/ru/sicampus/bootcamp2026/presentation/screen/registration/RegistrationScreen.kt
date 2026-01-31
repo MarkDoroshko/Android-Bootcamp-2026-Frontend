@@ -1,6 +1,7 @@
 package ru.sicampus.bootcamp2026.presentation.screen.registration
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -69,10 +70,13 @@ fun RegistrationScreen(
                 labelText = stringResource(R.string.password_placeholder)
             )
             AppButton(
-                content = ButtonContent.Text(R.string.sign_up_button),
-                onClick = {}
+                content = ButtonContent.Text(stringResource(R.string.sign_up_button)),
+                onClick = onFinished
             )
             Text(
+                modifier = Modifier.clickable {
+                    onNavigateToAuthorization()
+                },
                 text = stringResource(R.string.already_have_account),
                 fontWeight = FontWeight.W400,
                 fontSize = 15.sp,

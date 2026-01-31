@@ -1,6 +1,7 @@
 package ru.sicampus.bootcamp2026.presentation.screen.authorization
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -57,10 +58,13 @@ fun AuthorizationScreen(
                 labelText = stringResource(R.string.password_placeholder)
             )
             AppButton(
-                content = ButtonContent.Text(R.string.sign_in_button),
-                onClick = {}
+                content = ButtonContent.Text(stringResource(R.string.sign_in_button)),
+                onClick = onFinished
             )
             Text(
+                modifier = Modifier.clickable {
+                    onNavigateToAuthorization()
+                },
                 text = stringResource(R.string.dont_have_account),
                 fontWeight = FontWeight.W400,
                 fontSize = 15.sp,

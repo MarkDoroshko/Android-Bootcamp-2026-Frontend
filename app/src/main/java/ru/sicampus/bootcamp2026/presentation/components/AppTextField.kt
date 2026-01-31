@@ -33,7 +33,7 @@ fun AppTextField(
             .clip(RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
             .background(MaterialTheme.colorScheme.surfaceVariant),
         value = text,
-        onValueChange = { text = it },
+        onValueChange = {},
         label = {
             Text(
                 text = labelText,

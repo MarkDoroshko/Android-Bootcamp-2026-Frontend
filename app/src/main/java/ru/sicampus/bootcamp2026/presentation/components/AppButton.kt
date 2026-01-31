@@ -1,6 +1,5 @@
 package ru.sicampus.bootcamp2026.presentation.components
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
@@ -13,8 +12,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -24,12 +23,12 @@ import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026Fronten
 
 sealed class ButtonContent {
     data class Text(
-        val textResId: Int,
+        val text: String,
         val style: TextStyle? = null
     ) : ButtonContent()
 
     data class Icon(
-        @DrawableRes val iconResId: Int,
+        val icon: Painter,
         val size: Dp
     ) : ButtonContent()
 }
@@ -58,7 +57,7 @@ fun AppButton(
             when (content) {
                 is ButtonContent.Text -> {
                     Text(
-                        text = stringResource(content.textResId),
+                        text = content.text,
                         style = content.style ?: MaterialTheme.typography.labelMedium
                     )
                 }
@@ -66,7 +65,7 @@ fun AppButton(
                 is ButtonContent.Icon -> {
                     Icon(
                         modifier = Modifier.size(content.size),
-                        painter = painterResource(content.iconResId),
+                        painter = content.icon,
                         contentDescription = null
                     )
                 }
@@ -80,7 +79,10 @@ fun AppButton(
 fun PreviewAppButton() {
     AndroidBootcamp2026FrontendTheme {
         AppButton(
-            content = ButtonContent.Icon(R.drawable.ic_arrow_back, 16.dp),
+            content = ButtonContent.Icon(
+                icon = painterResource(R.drawable.ic_arrow_back),
+                size = 16.dp
+            ),
             cornerRadius = 4.dp,
             onClick = {}
         )

@@ -1,4 +1,4 @@
-package ru.sicampus.bootcamp2026.presentation.screen.profile
+package ru.sicampus.bootcamp2026.presentation.screen.creating_invitation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -29,10 +29,9 @@ import ru.sicampus.bootcamp2026.presentation.ui.theme.AndroidBootcamp2026Fronten
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen(
+fun CreatingInvitationScreen(
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit,
-    onSignOutClick: () -> Unit,
     onFinished: () -> Unit
     // TODO(viewModel)
 ) {
@@ -57,20 +56,6 @@ fun ProfileScreen(
                         cornerRadius = 10.dp,
                         onClick = onBackClick
                     )
-                },
-                actions = {
-                    AppButton(
-                        modifier = Modifier
-                            .height(56.dp)
-                            .width(115.dp),
-                        contentPadding = PaddingValues(vertical = 16.dp),
-                        content = ButtonContent.Text(
-                            text = stringResource(R.string.sign_out),
-                            style = MaterialTheme.typography.labelMedium
-                        ),
-                        cornerRadius = 10.dp,
-                        onClick = onSignOutClick
-                    )
                 }
             )
         }
@@ -85,7 +70,7 @@ fun ProfileScreen(
         ) {
             AppTitle(
                 modifier = Modifier,
-                titleText = stringResource(R.string.profile_title)
+                titleText = stringResource(R.string.creating_invitation_title)
             )
 
             Spacer(modifier = Modifier.height(50.dp))
@@ -96,23 +81,10 @@ fun ProfileScreen(
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 AppTextField(
-                    labelText = stringResource(R.string.name_placeholder),
-                    value = "Иван"
-                )
-                AppTextField(
-                    labelText = stringResource(R.string.surname_placeholder),
-                    value = "Иванов"
-                )
-                AppTextField(
-                    labelText = stringResource(R.string.patronymic_placeholder),
-                    value = "Иванович"
-                )
-                AppTextField(
-                    labelText = stringResource(R.string.email_placeholder),
-                    value = "example@mail.ru"
+                    labelText = stringResource(R.string.email_guest_placeholder)
                 )
                 AppButton(
-                    content = ButtonContent.Text(stringResource(R.string.save_button)),
+                    content = ButtonContent.Text(stringResource(R.string.invite_button)),
                     onClick = onFinished
                 )
             }
@@ -122,11 +94,10 @@ fun ProfileScreen(
 
 @Preview
 @Composable
-fun PreviewProfile() {
+fun PreviewCreatingInvitationScreen() {
     AndroidBootcamp2026FrontendTheme {
-        ProfileScreen(
+        CreatingInvitationScreen(
             onBackClick = {},
-            onSignOutClick = {},
             onFinished = {}
         )
     }
