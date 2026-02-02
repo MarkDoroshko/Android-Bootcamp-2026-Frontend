@@ -22,4 +22,7 @@
     <string name="create_button">Создать</string>
     <string name="name_meeting_placeholder">название</string>
     <string name="description_meeting_placeholder">описание</string>
+    <string name="my_invitations_title">Приглашения</string>
+    <string name="accept_button">Принять</string>
+    <string name="reject_button">Отклонить</string>
 </resources>
